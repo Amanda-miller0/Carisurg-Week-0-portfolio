@@ -1,7 +1,7 @@
 # Carisurg-Week-0
 This repository is for the submission Week 0's assignments
 
-# 🏥 CariSurg MedTech Pathways — Week 0 Project
+# CariSurg MedTech Pathways — Week 0 Project
 
 Mercer General Hospital | Clinical AI & Innovation Unit
 
@@ -20,7 +20,7 @@ The goal is to build foundational skills in:
 
 ---
 
-## 📌 Tutorial 1 — Gender Data Cleaning
+## Tutorial 1 — Gender Data Cleaning
 
 ### Objective
 Standardise the Gender column into a binary format:
@@ -38,14 +38,14 @@ A cleaned Gender column suitable for analysis in downstream tasks.
 
 ---
 
-## 📌 Tutorial 2 — Clinical Data Cleaning (Vital Signs)
+## Tutorial 2 — Clinical Data Cleaning (Vital Signs)
 
 ### Objective
 Clean and standardise multiple clinical variables to ensure consistency and clinical validity.
 
 ---
 
-### 🧠 Variables Cleaned
+### Variables Cleaned
 
 #### GCS (Glasgow Coma Scale)
 - Converted to numeric
@@ -81,7 +81,7 @@ Clean and standardise multiple clinical variables to ensure consistency and clin
 
 ---
 
-## 📊 Visualisations Created
+## Visualisations Created
 
 The following plots were generated for exploratory data analysis:
 
@@ -100,7 +100,7 @@ These visualisations help:
 
 ---
 
-## 🏥 Clinical Context
+## Clinical Context
 
 This dataset represents emergency department triage data.
 
@@ -114,7 +114,7 @@ Key clinical insights:
 
 ---
 
-## ⚠️ Key Data Cleaning Principles Used
+## Key Data Cleaning Principles Used
 
 - Convert all numeric fields using `pd.to_numeric(errors='coerce')`
 - Replace physiologically impossible values with NaN
@@ -124,7 +124,7 @@ Key clinical insights:
 
 ---
 
-## 📁 Files Included
+## Files Included
 
 - Week0_Tutorial1_GenderCleaning.ipynb
 - Week0_Tutorial2_ClinicalCleaning.ipynb
@@ -132,7 +132,7 @@ Key clinical insights:
 
 ---
 
-## 📌 Summary
+## Summary
 
 This project demonstrates how clinical understanding and data science techniques combine to produce clean, reliable healthcare datasets suitable for analysis and modelling.
 
