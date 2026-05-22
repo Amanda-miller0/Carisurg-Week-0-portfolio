@@ -84,20 +84,15 @@ Clean and standardise multiple clinical variables to ensure consistency and clin
 ## Tutorial 3 - Basic Data Visualisation with matplotlib
 
 The following plots were generated for exploratory data analysis:
+A scatter plot was used to explore the relationship between age and systolic blood pressure (SBP).
 
-- Gender distribution (bar plot)
-- GCS distribution (histogram)
-- Pulse distribution (histogram with clinical thresholds)
-- SBP vs DBP (scatter plot with trend reference)
-- Age vs Pulse (scatter plot with clinical ranges)
-- Vital signs overview (boxplots for all variables)
+The visualisation helps assess whether SBP tends to increase with age, which is clinically relevant due to the higher risk of hypertension in older adults.
 
-These visualisations help:
-- Identify distributions
-- Detect outliers
-- Understand relationships between variables
-- Validate clinical plausibility
+Reference thresholds were added:
+- SBP ≥ 140 mmHg (hypertension)
+- Age ≥ 65 years (older adult group)
 
+This allows quick identification of potential high-risk patient patterns in the dataset.
 ---
 
 ## Clinical Context
