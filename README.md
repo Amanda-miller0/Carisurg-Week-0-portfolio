@@ -1,65 +1,139 @@
 # Carisurg-Week-0
 This repository is for the submission Week 0's assignments
 
-# 🏥 CariSurg MedTech Pathways — Week 0 Tutorial 1
+# 🏥 CariSurg MedTech Pathways — Week 0 Project
 
-## Python for Basic Data Exploration & Cleaning  
 Mercer General Hospital | Clinical AI & Innovation Unit
 
 ---
 
 ## Overview
-This project is part of the Week 0 training tutorial for the Clinical AI & Innovation Unit. The goal was to learn basic Python and perform initial data cleaning on a hospital triage dataset.
+This repository contains Week 0 work for the CariSurg MedTech Pathways programme.  
+The project focuses on exploring, cleaning, and visualising a real-world emergency triage dataset using Python.
+
+The goal is to build foundational skills in:
+- Clinical data understanding
+- Data cleaning and preprocessing
+- Handling missing values and outliers
+- Basic data visualisation
+- Connecting clinical meaning to data science
 
 ---
 
-## Objective
-To clean the **Gender column** in a real-world clinical dataset by:
-- Identifying inconsistent values
-- Standardizing them into a binary format
-  - 1 = Male  
-  - 0 = Female
+## 📌 Tutorial 1 — Gender Data Cleaning
+
+### Objective
+Standardise the Gender column into a binary format:
+- 1 = Male  
+- 0 = Female  
+
+### Steps Completed
+- Loaded dataset using pandas
+- Identified inconsistent gender values (e.g. "MALE", "female", "1", "0")
+- Applied mapping dictionary to standardise values
+- Verified cleaning using `.head()` and `.value_counts()`
+
+### Outcome
+A cleaned Gender column suitable for analysis in downstream tasks.
 
 ---
 
-## Steps Completed
+## 📌 Tutorial 2 — Clinical Data Cleaning (Vital Signs)
 
-### 1. Data Loading
-- Imported dataset using `pandas`
-- Inspected shape and column types
-
-### 2. Data Exploration
-- Checked unique values in the `Gender` column
-- Used `.unique()` and `.value_counts()` to identify inconsistencies
-
-### 3. Data Cleaning
-- Created a mapping dictionary to standardize values:
-  - Male, MALE, 1 → 1  
-  - Female, FEMALE, 0 → 0
-- Applied `.map()` to create a cleaned column
-
-### 4. Verification
-- Confirmed no missing values after cleaning
-- Replaced original column with cleaned version
+### Objective
+Clean and standardise multiple clinical variables to ensure consistency and clinical validity.
 
 ---
 
-## Tools Used
-- Python
-- Pandas
-- NumPy
-- Google Colab
+### 🧠 Variables Cleaned
+
+#### GCS (Glasgow Coma Scale)
+- Converted to numeric
+- Handled invalid entries (e.g. "error")
+- Removed out-of-range values (3–15)
+- Imputed missing values using median
+
+#### SBP (Systolic Blood Pressure)
+- Converted to numeric
+- Removed physiologically impossible values (<50 or >250)
+- Imputed using median
+
+#### DBP (Diastolic Blood Pressure)
+- Removed values outside 30–150 mmHg
+- Imputed using median
+- Used in MAP calculation
+
+#### Temperature
+- Standardised mixed formats (°C, °F, strings)
+- Converted all values to Celsius
+- Removed invalid physiological values (32–43°C)
+- Imputed using median
+
+#### Pulse, RR, FiO2
+- Converted to numeric
+- Removed out-of-range values based on clinical thresholds
+- Imputed missing values using median (FiO2 preserved clinically valid 21–100%)
+
+#### MAP (Mean Arterial Pressure)
+- Recalculated using:
+  - MAP = (SBP + 2 × DBP) / 3
+- Used SBP and DBP to ensure clinical consistency
 
 ---
 
-## Outcome
-A cleaned dataset with a standardized Gender column ready for further analysis in future tutorials.
+## 📊 Visualisations Created
+
+The following plots were generated for exploratory data analysis:
+
+- Gender distribution (bar plot)
+- GCS distribution (histogram)
+- Pulse distribution (histogram with clinical thresholds)
+- SBP vs DBP (scatter plot with trend reference)
+- Age vs Pulse (scatter plot with clinical ranges)
+- Vital signs overview (boxplots for all variables)
+
+These visualisations help:
+- Identify distributions
+- Detect outliers
+- Understand relationships between variables
+- Validate clinical plausibility
 
 ---
 
-## File Included
-- `Week0_Tutorial1_GenderCleaning.ipynb`
+## 🏥 Clinical Context
 
+This dataset represents emergency department triage data.
 
+Key clinical insights:
+- GCS assesses consciousness (3 = severe impairment, 15 = normal)
+- SBP/DBP indicate blood pressure and cardiovascular status
+- MAP reflects organ perfusion
+- Pulse and RR indicate physiological stress
+- Temperature indicates infection or systemic issues
+- FiO2 indicates oxygen therapy level
 
 ---
+
+## ⚠️ Key Data Cleaning Principles Used
+
+- Convert all numeric fields using `pd.to_numeric(errors='coerce')`
+- Replace physiologically impossible values with NaN
+- Use median imputation for robustness
+- Standardise inconsistent formats (especially temperature)
+- Validate using clinical reference ranges, not just statistics
+
+---
+
+## 📁 Files Included
+
+- Week0_Tutorial1_GenderCleaning.ipynb
+- Week0_Tutorial2_ClinicalCleaning.ipynb
+- Generated plots (.png files)
+
+---
+
+## 📌 Summary
+
+This project demonstrates how clinical understanding and data science techniques combine to produce clean, reliable healthcare datasets suitable for analysis and modelling.
+
+Proper preprocessing ensures that downstream insights are clinically valid and not distorted by errors, outliers, or inconsistent data entry.
