@@ -81,7 +81,7 @@ Clean and standardise multiple clinical variables to ensure consistency and clin
 
 ---
 
-## Visualisations Created
+## Tutorial 3 - Basic Data Visualisation with matplotlib
 
 The following plots were generated for exploratory data analysis:
 
@@ -128,6 +128,7 @@ Key clinical insights:
 
 - Week0_Tutorial1_GenderCleaning.ipynb
 - Week0_Tutorial2_ClinicalCleaning.ipynb
+- Week0_Tutorial3_Visualisation.ipynb
 - Generated plots (.png files)
 
 ---
